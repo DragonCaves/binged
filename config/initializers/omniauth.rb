@@ -1,3 +1,3 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :facebook, "370891789954497", "aa5b0add5960680f8ebfb1a48660e8eb"
+  provider :facebook, Settings.oauth.facebook.app_id, Settings.oauth.facebook.app_secret, scope: 'email,public_profile', info_fields: 'first_name,last_name,email'
 end
